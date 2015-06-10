@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Sunshine</string>
+
+    <string name="lblDate">Today, June 9</string>
+    <string name="lblMaxTemp">21º</string>
+    <string name="lblMinTemp">8º</string>
+    <string name="lblAmbiance">Cloudy</string>
+
+    <string name="lblItemForecast">Today  -  Sunny  -  88 / 63</string>
+
+    <string name="lblRefresh">Refresh</string>
+    <string name="lblSettings">Settings</string>
+
+</resources>
