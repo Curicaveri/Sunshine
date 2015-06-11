@@ -24,6 +24,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="me.armando.sunshine.DetailActivity"
+            android:label="@string/title_activity_detail"
+            android:parentActivityName="me.armando.sunshine.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="me.armando.sunshine.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

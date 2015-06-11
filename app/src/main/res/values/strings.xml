@@ -10,5 +10,8 @@
 
     <string name="lblRefresh">Refresh</string>
     <string name="lblSettings">Settings</string>
+    <string name="title_activity_detail">DetailActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
 
 </resources>

@@ -1,5 +1,6 @@
 package me.armando.sunshine;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,6 +9,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -34,8 +36,19 @@ public class ForecastFragment extends Fragment
     {
         this.rootView=inflater.inflate(R.layout.fragment_main, container, false);
         this.adptList=new ArrayAdapter<String>(getActivity(), R.layout.list_item_forecast, R.id.lblItemForecast, this.getData());
-        ListView lstForecast=(ListView)this.rootView.findViewById(R.id.lstForecast);
+        final ListView lstForecast=(ListView)this.rootView.findViewById(R.id.lstForecast);
         lstForecast.setAdapter(this.adptList);
+        lstForecast.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+            {
+                String item=adptList.getItem(position);
+                Intent detailIntent=new Intent(getActivity(), DetailActivity.class);
+                detailIntent.putExtra("item", item);
+                getActivity().startActivity(detailIntent);
+            }
+        });
         return rootView;
     }
 
