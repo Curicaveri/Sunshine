@@ -30,6 +30,7 @@ public class FetchWeatherTask extends AsyncTask<String, Void, ArrayList<String>>
             if(params.length>0)
             {
                 String postCode=params[0];
+                String temperatureUnits=params[1];
                 Uri.Builder builder=new Uri.Builder();
                 builder.scheme("http");
                 builder.authority("api.openweathermap.org");
@@ -43,7 +44,7 @@ public class FetchWeatherTask extends AsyncTask<String, Void, ArrayList<String>>
                 builder.appendQueryParameter("cnt", "7");
                 String route=builder.build().toString();
                 String res=HttpRequest.makeHTTPRequest(route, "GET");
-                response=Utilities.getWeatherDataFromJson(res, 7);
+                response=Utilities.getWeatherDataFromJson(res, 7, temperatureUnits);
             }
         }
         catch(Exception e)

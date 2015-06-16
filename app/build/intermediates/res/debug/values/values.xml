@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- From: file:/home/armando/Projects/Android-Studio/Sunshine/app/src/main/res/values/arrays.xml -->
+    <eat-comment/>
+    <string-array name="lstTemperatureUnitsTexts">
+        <item>Celsius</item>
+        <item>Imperial</item>
+    </string-array>
+    <string-array name="lstTemperatureUnitsValues">
+        <item>Celsius</item>
+        <item>Imperial</item>
+    </string-array>
     <!-- From: file:/home/armando/Projects/Android-Studio/Sunshine/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
     <attr format="reference" name="drawerArrowStyle"/>
@@ -198,7 +208,9 @@
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <!-- From: file:/home/armando/Projects/Android-Studio/Sunshine/app/src/main/res/values/strings.xml -->
     <eat-comment/>
+    <string name="action_map">Map Location</string>
     <string name="action_settings">Settings</string>
+    <string name="action_share">Share</string>
     <string name="app_name">Sunshine</string>
     <string name="hello_world">Hello world!</string>
     <string name="lblAmbiance">Cloudy</string>
@@ -208,12 +220,25 @@
     <string name="lblMinTemp">8º</string>
     <string name="lblRefresh">Refresh</string>
     <string name="lblSettings">Settings</string>
+    <!-- From: file:/home/armando/Projects/Android-Studio/Sunshine/app/src/main/res/values/strings_activity_settings.xml -->
+    <eat-comment/>
+    <string name="pref_header_general">General</string>
+    <string name="pref_location_default" translatable="false">94043</string>
+    <string name="pref_location_key" translatable="false">location</string>
+    <string name="pref_temperature_units_default" translatable="false">Celsius</string>
+    <string name="pref_temperature_units_key" translatable="false">temperature_units</string>
+    <string name="pref_temperature_units_summary">Set the temperature units.</string>
+    <string name="pref_title_location">Location</string>
+    <string name="pref_title_temperature_units">Temperature Units</string>
     <!-- From: file:/home/armando/Projects/Android-Studio/Sunshine/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
     <string name="status_bar_notification_info_overflow">999+</string>
     <!-- From: file:/home/armando/Projects/Android-Studio/Sunshine/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="title_activity_detail">DetailActivity</string>
+    <!-- From: file:/home/armando/Projects/Android-Studio/Sunshine/app/src/main/res/values/strings_activity_settings.xml -->
+    <eat-comment/>
+    <string name="title_activity_settings">Settings</string>
     <!-- From: file:/home/armando/Projects/Android-Studio/Sunshine/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>

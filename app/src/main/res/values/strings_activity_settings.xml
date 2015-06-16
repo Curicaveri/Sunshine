@@ -1,0 +1,18 @@
+<resources>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+
+    <string name="pref_title_location">Location</string>
+    <string name="pref_location_key" translatable="false">location</string>
+    <string name="pref_location_default" translatable="false">94043</string>
+
+    <string name="pref_title_temperature_units">Temperature Units</string>
+    <string name="pref_temperature_units_summary">Set the temperature units.</string>
+    <string name="pref_temperature_units_key" translatable="false">temperature_units</string>
+    <string name="pref_temperature_units_default" translatable="false">Celsius</string>
+
+</resources>

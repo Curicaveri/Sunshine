@@ -8,5 +8,10 @@
         android:orderInCategory="100"
         app:showAsAction="never" />
 
+    <item
+        android:id="@+id/action_map"
+        android:title="@string/action_map"
+        app:showAsAction="never" />
+
 </menu>
 <!-- From: file:/home/armando/Projects/Android-Studio/Sunshine/app/src/main/res/menu/menu_main.xml -->

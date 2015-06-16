@@ -1,8 +1,12 @@
 package me.armando.sunshine;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -15,6 +19,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+import me.armando.sunshine.forecast.Utilities;
 import me.armando.sunshine.tasks.FetchWeatherTask;
 
 public class ForecastFragment extends Fragment
@@ -35,7 +40,7 @@ public class ForecastFragment extends Fragment
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
         this.rootView=inflater.inflate(R.layout.fragment_main, container, false);
-        this.adptList=new ArrayAdapter<String>(getActivity(), R.layout.list_item_forecast, R.id.lblItemForecast, this.getData());
+        this.adptList=new ArrayAdapter<String>(getActivity(), R.layout.list_item_forecast, R.id.lblItemForecast, new ArrayList<String>());
         final ListView lstForecast=(ListView)this.rootView.findViewById(R.id.lstForecast);
         lstForecast.setAdapter(this.adptList);
         lstForecast.setOnItemClickListener(new AdapterView.OnItemClickListener()
@@ -53,6 +58,13 @@ public class ForecastFragment extends Fragment
     }
 
     @Override
+    public void onStart()
+    {
+        super.onStart();
+        Utilities.updateWeather(this);
+    }
+
+    @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater)
     {
         inflater.inflate(R.menu.forecastfragment, menu);
@@ -64,8 +76,7 @@ public class ForecastFragment extends Fragment
         int id=item.getItemId();
         if(id==R.id.mnuRefresh)
         {
-            FetchWeatherTask weatherTask=new FetchWeatherTask(this);
-            weatherTask.execute("94043");
+            Utilities.updateWeather(this);
         }
         return super.onOptionsItemSelected(item);
     }
@@ -88,18 +99,5 @@ public class ForecastFragment extends Fragment
     public void setRootView(View rootView)
     {
         this.rootView=rootView;
-    }
-
-    protected ArrayList<String> getData()
-    {
-        ArrayList<String> data=new ArrayList<>();
-        data.add("Today  -  Sunny  -  27 / 9");
-        data.add("Tomorrow  -  Foggy  -  23 / 7");
-        data.add("Thursday  -  Cloudy  -  25 / 8");
-        data.add("Friday  -  Rainy  -  20 / 5");
-        data.add("Saturday  -  Foggy  -  23 / 7");
-        data.add("Sunday  -  Sunny  -  27 / 9");
-        data.add("Monday  -  Rainy  -  20 / 5");
-        return data;
     }
 }
